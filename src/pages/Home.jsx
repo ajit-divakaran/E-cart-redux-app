@@ -15,12 +15,12 @@ const Home = () => {
     {
       data?.length>0 && data?.map((item)=>(
 
-      <div key={item} className="border border-black p-2">
+      <div key={item} className="border border-black rounded m-2 p-2 flex flex-col justify-between">
         <img src={item?.image} alt="" className='w-full h-60' />
-        <h4 className="text-center text-3xl">{item?.title}</h4>
-        <p className="text-justify">{item?.description.slice(0,60)}</p>
-        <p className="text-2xl">Price:<span className='text-violet-600'>$ {item?.price}</span></p>
-        <div className="flex justify-between">
+        <h4 className="text-center d-font heads mt-4">{item?.title}</h4>
+        <p className="text-justify mt-5">{item?.description.slice(0,60)}</p>
+        <p className="text-2xl mt-5">Price:<span className='text-violet-600 ml-2'>$ {item?.price}</span></p>
+        <div className="flex justify-between mb-4 mt-2">
           <button className="p-3 rounded bg-red-700 text-white" onClick={()=>dispatch(addWishlistItems(item))}><FontAwesomeIcon icon={faHeart}/></button>
           <button className="p-3 rounded bg-green-700 text-white" onClick={()=>dispatch(addItemToCart(item))}><FontAwesomeIcon icon={faShoppingCart}/></button>
         </div>
